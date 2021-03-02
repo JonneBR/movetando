@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 export const Add = () => {
   const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
 
   const onChange = (e) => {
     e.preventDefault();
@@ -13,7 +14,11 @@ export const Add = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (!data.errors) {
+          setResults(data.results);
+        } else {
+          setResults([]);
+        }
       });
   };
   return (
@@ -28,6 +33,14 @@ export const Add = () => {
               onChange={onChange}
             />
           </div>
+
+          {results.length > 0 && (
+            <ul className='results'>
+              {results.map((movie) => (
+                <li>{movie.title}</li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>
