@@ -20,7 +20,7 @@ function App() {
             <Watchlist />
           </Route>
 
-          <Route exact path='/wacthed'>
+          <Route exact path='/watched'>
             <Watched />
           </Route>
 
