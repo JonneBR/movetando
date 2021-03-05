@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+// fetch('https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false')
+
 export const Add = () => {
   const [query, setQuery] = useState('');
 
@@ -7,6 +9,7 @@ export const Add = () => {
     e.preventDefault();
     // console.log(e.target.value);
     setQuery(e.target.value);
+    console.log(e.target.value);
   };
   return (
     <div className='add-page'>
