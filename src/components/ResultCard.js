@@ -4,7 +4,10 @@ import { GlobalContext } from '../context/GlobalState';
 export const ResultCard = ({ movie }) => {
   const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
 
-  let storeMovie = watchlist.find((o) => o.id === movie.id);
+  //Run some more tests to understand this block of code better
+  let storeMovie = watchlist.find(
+    (movieSelected) => movieSelected.id === movie.id
+  );
 
   const watchlistDisable = storeMovie ? true : false;
 

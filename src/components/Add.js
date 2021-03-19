@@ -7,7 +7,6 @@ export const Add = () => {
 
   const onChange = (e) => {
     e.preventDefault();
-    // console.log(e.target.value);
     setQuery(e.target.value);
 
     fetch(
