@@ -41,7 +41,7 @@ export const GlobalProvider = (props) => {
 
   //move to watchlist
   const moveToWatchlist = (movie) => {
-    dispatch({ type: 'MOVIE_TO_WATCHLIST', payload: movie });
+    dispatch({ type: 'MOVE_TO_WATCHLIST', payload: movie });
   };
 
   //remove from watchlist
